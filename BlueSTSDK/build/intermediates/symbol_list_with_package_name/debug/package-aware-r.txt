@@ -1,0 +1,19 @@
+com.st.BlueSTSDK
+drawable ic_launcher
+id startLog
+id stopLog
+menu menu_log_feature
+string EnablePositionService
+string LocationCoarseRationale
+string LocationNotEnabled
+string LocationNotGranted
+string WriteSDNotGranted
+string WriteSDRationale
+string askExprotByMailForceStop
+string askExprotByMailMessage
+string askExprotByMailMessageExtraSize
+string askExprotByMailTitle
+string bluetoothNotEnabled
+string startLogging
+string stopLogging
+xml log_file_path

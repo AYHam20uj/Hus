@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_gray_light"
+    tools:context=".view.fragments.setting.LightLCPropertyFragment">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:orientation="vertical"
+       android:layout_marginTop="20dp"
+       android:layout_height="wrap_content">
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="16sp"
+           android:textStyle="bold"
+           android:layout_marginLeft="10dp"
+           android:textColor="@color/ST_BLUE_DARK"
+           android:text="1. Standby"></TextView>
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="40dp"
+           android:background="@drawable/rectangular_rounded"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:layout_marginTop="5dp">
+
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Standby Lightness"
+               android:layout_centerVertical="true"
+               android:layout_alignParentLeft="true"
+               android:textColor="@color/Black"
+               android:layout_marginLeft="10dp"
+               android:textSize="14sp"></TextView>
+
+           <EditText
+               android:layout_width="60dp"
+               android:inputType="number"
+               android:singleLine="true"
+               android:layout_toLeftOf="@id/standbySpinner"
+               android:layout_marginRight="8dp"
+               android:id="@+id/standbyEdit"
+               android:text="0"
+               android:padding="4dp"
+               android:textSize="13sp"
+               android:layout_marginLeft="5dp"
+               android:textAlignment="center"
+               android:layout_centerVertical="true"
+               android:imeOptions="actionNext"
+               android:background="@drawable/round_background"
+               android:layout_height="30dp">
+           </EditText>
+
+           <Spinner
+               android:layout_width="90dp"
+               android:layout_marginLeft="8dp"
+               android:layout_centerVertical="true"
+               android:background="@drawable/round_background"
+               android:layout_height="30dp"
+               android:layout_alignParentRight="true"
+               android:id="@+id/standbySpinner"
+               android:layout_marginRight="10dp"
+               ></Spinner>
+
+       </RelativeLayout>
+
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="16sp"
+           android:layout_marginTop="15dp"
+           android:textStyle="bold"
+           android:layout_marginLeft="10dp"
+           android:textColor="@color/ST_BLUE_DARK"
+           android:text="2. Fade On"></TextView>
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="40dp"
+           android:background="@drawable/rectangular_rounded"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:layout_marginTop="5dp">
+
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Fade On Time (ms)"
+               android:layout_centerVertical="true"
+               android:layout_alignParentLeft="true"
+               android:textColor="@color/Black"
+               android:layout_marginLeft="10dp"
+               android:textSize="14sp"></TextView>
+
+           <EditText
+               android:layout_width="60dp"
+               android:text="0"
+               android:padding="4dp"
+               android:textSize="13sp"
+               android:textAlignment="center"
+               android:singleLine="true"
+               android:layout_toLeftOf="@id/dummySpinner1"
+               android:layout_marginRight="8dp"
+               android:layout_marginLeft="5dp"
+               android:layout_centerVertical="true"
+               android:id="@+id/fadeOnEdit"
+               android:inputType="number"
+               android:imeOptions="actionNext"
+               android:background="@drawable/round_background"
+               android:layout_height="30dp">
+           </EditText>
+
+           <Spinner
+               android:layout_width="90dp"
+               android:layout_marginLeft="8dp"
+               android:layout_centerVertical="true"
+               android:visibility="invisible"
+               android:background="@drawable/round_background"
+               android:layout_height="30dp"
+               android:layout_alignParentRight="true"
+               android:id="@+id/dummySpinner1"
+               android:layout_marginRight="10dp"
+               ></Spinner>
+
+       </RelativeLayout>
+
+       <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textSize="16sp"
+       android:layout_marginTop="15dp"
+       android:textStyle="bold"
+       android:layout_marginLeft="10dp"
+       android:textColor="@color/ST_BLUE_DARK"
+       android:text="3. Run"></TextView>
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="40dp"
+           android:background="@drawable/rectangular_rounded"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:layout_marginTop="5dp">
+
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Run Time (ms)"
+               android:layout_centerVertical="true"
+               android:layout_alignParentLeft="true"
+               android:textColor="@color/Black"
+               android:layout_marginLeft="10dp"
+               android:textSize="14sp"></TextView>
+
+           <EditText
+               android:layout_width="60dp"
+               android:text="0"
+               android:padding="4dp"
+               android:textSize="13sp"
+               android:textAlignment="center"
+               android:layout_marginLeft="5dp"
+               android:inputType="number"
+               android:singleLine="true"
+               android:layout_toLeftOf="@id/dummySpinner2"
+               android:layout_marginRight="8dp"
+               android:id="@+id/runEdit"
+               android:layout_centerVertical="true"
+               android:imeOptions="actionNext"
+               android:background="@drawable/round_background"
+               android:layout_height="30dp">
+           </EditText>
+
+           <Spinner
+               android:layout_width="90dp"
+               android:layout_marginLeft="8dp"
+               android:layout_centerVertical="true"
+               android:visibility="invisible"
+               android:background="@drawable/round_background"
+               android:layout_height="30dp"
+               android:layout_alignParentRight="true"
+               android:id="@+id/dummySpinner2"
+               android:layout_marginRight="10dp"
+               ></Spinner>
+
+       </RelativeLayout>
+
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="16sp"
+           android:layout_marginTop="15dp"
+           android:textStyle="bold"
+           android:layout_marginLeft="10dp"
+           android:textColor="@color/ST_BLUE_DARK"
+           android:text="4. Fade to Prolong"></TextView>
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="40dp"
+           android:background="@drawable/rectangular_rounded"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:layout_marginTop="5dp">
+
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Fade Time (ms)"
+               android:layout_centerVertical="true"
+               android:layout_alignParentLeft="true"
+               android:textColor="@color/Black"
+               android:layout_marginLeft="10dp"
+               android:textSize="14sp"></TextView>
+
+           <EditText
+               android:layout_width="60dp"
+               android:text="0"
+               android:padding="4dp"
+               android:layout_marginLeft="5dp"
+               android:textSize="13sp"
+               android:textAlignment="center"
+               android:inputType="number"
+               android:singleLine="true"
+               android:layout_toLeftOf="@id/dummySpinner3"
+               android:layout_marginRight="8dp"
+               android:id="@+id/fadeProlongEdit"
+               android:layout_centerVertical="true"
+               android:imeOptions="actionNext"
+               android:background="@drawable/round_background"
+               android:layout_height="30dp">
+           </EditText>
+
+           <Spinner
+               android:layout_width="90dp"
+               android:layout_marginLeft="8dp"
+               android:layout_centerVertical="true"
+               android:visibility="invisible"
+               android:background="@drawable/round_background"
+               android:layout_height="30dp"
+               android:layout_alignParentRight="true"
+               android:id="@+id/dummySpinner3"
+               android:layout_marginRight="10dp"
+               ></Spinner>
+
+       </RelativeLayout>
+
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="16sp"
+           android:layout_marginTop="15dp"
+           android:textStyle="bold"
+           android:layout_marginLeft="10dp"
+           android:textColor="@color/ST_BLUE_DARK"
+           android:text="5. Prolong"></TextView>
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="40dp"
+           android:background="@drawable/rectangular_rounded"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:layout_marginTop="5dp">
+
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Prolong Time (ms)"
+               android:layout_centerVertical="true"
+               android:layout_alignParentLeft="true"
+               android:textColor="@color/Black"
+               android:layout_marginLeft="10dp"
+               android:textSize="14sp"></TextView>
+
+           <EditText
+               android:id="@+id/prolongEdit1"
+               android:layout_width="60dp"
+               android:layout_height="30dp"
+               android:layout_marginRight="8dp"
+               android:layout_toLeftOf="@id/dummySpinner4"
+               android:background="@drawable/round_background"
+               android:imeOptions="actionNext"
+               android:inputType="number"
+               android:layout_marginLeft="5dp"
+               android:layout_centerVertical="true"
+               android:padding="4dp"
+               android:singleLine="true"
+               android:text="0"
+               android:textAlignment="center"
+               android:textSize="13sp"></EditText>
+
+           <Spinner
+               android:layout_width="90dp"
+               android:layout_marginLeft="8dp"
+               android:layout_centerVertical="true"
+               android:visibility="invisible"
+               android:background="@drawable/round_background"
+               android:layout_height="30dp"
+               android:layout_alignParentRight="true"
+               android:id="@+id/dummySpinner4"
+               android:layout_marginRight="10dp"
+               ></Spinner>
+
+       </RelativeLayout>
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="40dp"
+           android:background="@drawable/rectangular_rounded"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:layout_marginTop="5dp">
+
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Prolong Lightness"
+               android:layout_centerVertical="true"
+               android:layout_alignParentLeft="true"
+               android:textColor="@color/Black"
+               android:layout_marginLeft="10dp"
+               android:textSize="14sp"></TextView>
+
+           <EditText
+               android:layout_width="60dp"
+               android:text="0"
+               android:padding="4dp"
+               android:textSize="13sp"
+               android:textAlignment="center"
+               android:inputType="number"
+               android:layout_marginLeft="5dp"
+               android:singleLine="true"
+               android:layout_toLeftOf="@id/prolongLightnessSpinner"
+               android:layout_marginRight="8dp"
+               android:id="@+id/prolongEdit2"
+               android:layout_centerVertical="true"
+               android:imeOptions="actionNext"
+               android:background="@drawable/round_background"
+               android:layout_height="30dp">
+           </EditText>
+
+           <Spinner
+               android:layout_width="90dp"
+               android:layout_marginLeft="8dp"
+               android:layout_centerVertical="true"
+               android:background="@drawable/round_background"
+               android:layout_height="30dp"
+               android:layout_alignParentRight="true"
+               android:id="@+id/prolongLightnessSpinner"
+               android:layout_marginRight="10dp"
+               ></Spinner>
+
+       </RelativeLayout>
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="16sp"
+           android:layout_marginTop="15dp"
+           android:textStyle="bold"
+           android:layout_marginLeft="10dp"
+           android:textColor="@color/ST_BLUE_DARK"
+           android:text="6. Fade to Standby"></TextView>
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="40dp"
+           android:background="@drawable/rectangular_rounded"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:layout_marginTop="5dp">
+
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Fade Time (ms)"
+               android:layout_centerVertical="true"
+               android:layout_alignParentLeft="true"
+               android:textColor="@color/Black"
+               android:layout_marginLeft="10dp"
+               android:textSize="14sp"></TextView>
+
+           <EditText
+               android:layout_width="60dp"
+               android:text="0"
+               android:padding="4dp"
+               android:textSize="13sp"
+               android:textAlignment="center"
+               android:layout_marginLeft="5dp"
+               android:inputType="number"
+               android:singleLine="true"
+               android:layout_toLeftOf="@id/dummySpinner5"
+               android:layout_marginRight="8dp"
+               android:id="@+id/fadeStandbyEdit"
+               android:layout_centerVertical="true"
+               android:imeOptions="actionDone"
+               android:background="@drawable/round_background"
+               android:layout_height="30dp">
+           </EditText>
+
+           <Spinner
+               android:layout_width="90dp"
+               android:layout_marginLeft="8dp"
+               android:layout_centerVertical="true"
+               android:visibility="invisible"
+               android:background="@drawable/round_background"
+               android:layout_height="30dp"
+               android:layout_alignParentRight="true"
+               android:id="@+id/dummySpinner5"
+               android:layout_marginRight="10dp"
+               ></Spinner>
+
+       </RelativeLayout>
+
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:weightSum="2"
+           android:orientation="horizontal"
+           android:layout_marginBottom="25dp"
+           android:layout_marginTop="35dp">
+
+           <RelativeLayout
+               android:layout_width="0dp"
+               android:layout_weight="1"
+               android:layout_height="wrap_content">
+
+               <Button
+                   android:layout_width="100dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="16sp"
+                   android:textColor="#ffffff"
+                   android:textAllCaps="false"
+                   android:layout_centerHorizontal="true"
+                   android:id="@+id/readButton"
+                   android:textAlignment="center"
+                   android:background="@drawable/rounded_corner_fill_blue"
+                   android:text="Read"></Button>
+
+           </RelativeLayout>
+
+
+           <RelativeLayout
+               android:layout_width="0dp"
+               android:layout_weight="1"
+               android:layout_height="wrap_content">
+
+               <Button
+                   android:layout_width="100dp"
+                   android:layout_height="wrap_content"
+                   android:textColor="#ffffff"
+                   android:textAllCaps="false"
+                   android:textSize="16sp"
+                   android:layout_centerHorizontal="true"
+                   android:textAlignment="center"
+                   android:id="@+id/saveButton"
+                   android:background="@drawable/rounded_corner_fill_blue"
+                   android:text="Save"></Button>
+
+           </RelativeLayout>
+
+       </LinearLayout>
+
+   </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+
+</RelativeLayout>

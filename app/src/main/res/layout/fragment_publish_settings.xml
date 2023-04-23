@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whitecard"
+    tools:context=".view.fragments.setting.group.PublishSettingsFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Default Publish Settings"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="18dp"
+        android:id="@+id/heading"
+        android:textColor="@color/ST_BLUE_DARK"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/rectangular_rounded"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/ttlBox"
+        android:layout_below="@id/heading"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Publish TTL"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/Black"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/ST_BLUE_DARK"
+            android:layout_toLeftOf="@id/ttlEdit">
+
+        </TextView>
+
+        <EditText
+            android:layout_width="150dp"
+            android:padding="4dp"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:inputType="number"
+            android:hint="0-127"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/ttlEdit"
+            android:imeOptions="actionNext"
+            android:background="@drawable/round_background"
+            android:layout_height="36dp">
+        </EditText>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/rectangular_rounded"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/periodBox"
+        android:layout_below="@id/ttlBox"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Publish Period Steps"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/Black"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/ST_BLUE_DARK"
+            android:layout_toLeftOf="@id/periodStepsEdit">
+
+        </TextView>
+
+        <EditText
+            android:layout_width="150dp"
+            android:padding="4dp"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:hint="0-63"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:inputType="number"
+            android:layout_centerVertical="true"
+            android:id="@+id/periodStepsEdit"
+            android:imeOptions="actionNext"
+            android:background="@drawable/round_background"
+            android:layout_height="36dp">
+        </EditText>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/rectangular_rounded"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/periodResBox"
+        android:layout_below="@id/periodBox"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Publish Period Res"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/Black"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/ST_BLUE_DARK"
+            android:layout_toLeftOf="@id/periodResEdit">
+
+        </TextView>
+
+        <EditText
+            android:layout_width="150dp"
+            android:padding="4dp"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:hint="0-3"
+            android:inputType="number"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/periodResEdit"
+            android:imeOptions="actionNext"
+            android:background="@drawable/round_background"
+            android:layout_height="36dp">
+        </EditText>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/rectangular_rounded"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/retransmitCountBox"
+        android:layout_below="@id/periodResBox"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retransmit Count"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/Black"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/ST_BLUE_DARK"
+            android:layout_toLeftOf="@id/retransmitCountEdit">
+
+        </TextView>
+
+        <EditText
+            android:layout_width="150dp"
+            android:padding="4dp"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:hint="0-31"
+            android:inputType="number"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/retransmitCountEdit"
+            android:imeOptions="actionNext"
+            android:background="@drawable/round_background"
+            android:layout_height="36dp">
+        </EditText>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@drawable/rectangular_rounded"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/retransmitStepBox"
+        android:layout_below="@id/retransmitCountBox"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retransmit Step"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/Black"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/ST_BLUE_DARK"
+            android:layout_toLeftOf="@id/retransmitStepEdit">
+
+        </TextView>
+
+        <EditText
+            android:layout_width="150dp"
+            android:padding="4dp"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:inputType="number"
+            android:hint="0-7"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/retransmitStepEdit"
+            android:imeOptions="actionNext"
+            android:background="@drawable/round_background"
+            android:layout_height="36dp">
+        </EditText>
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/retransmitStepBox"
+        android:layout_marginTop="60dp"
+        android:text="Done"
+        android:id="@+id/doneBtn"
+        android:textColor="@color/ST_BLUE_DARK"
+        android:layout_marginLeft="15dp"
+        android:background="@color/colorGrey"
+        android:layout_marginRight="15dp"></Button>
+
+</RelativeLayout>

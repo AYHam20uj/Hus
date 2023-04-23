@@ -1,0 +1,91 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 32
+    archivesBaseName = "ST BLE-Mesh"
+    ndkVersion '25.1.8937393'
+
+    defaultConfig {
+        applicationId ""
+        minSdkVersion 23
+        targetSdkVersion 32
+        versionCode 141
+        versionName "1.14.001"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        releaseUnsigned.initWith(buildTypes.release)
+        releaseUnsigned {
+            signingConfig null
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("keys/moble.jks")
+            storePassword "stmicro"
+            keyAlias "Key0"
+            keyPassword "stmicro"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs '../../MobleLibrary/build/outputs/aar'
+    }
+}
+
+dependencies {
+    implementation (name: 'MobleLibrary-release', ext: 'aar')
+    implementation "androidx.annotation:annotation:$rootProject.androidx_annotationVersion"
+    implementation "androidx.appcompat:appcompat:$rootProject.androidx_appCompatVersion"
+    implementation "com.google.android.material:material:$rootProject.androidx_materialVersion"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.androidx_recycleViewVersion"
+    implementation "androidx.cardview:cardview:$rootProject.androidx_cardViewVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.androidx_constraintLayoutVersion"
+    implementation "androidx.dynamicanimation:dynamicanimation:$rootProject.dynamicanimation_version"
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'pl.bclogic:pulsator4droid:1.0.3'
+    implementation 'de.hdodenhof:circleimageview:1.2.1'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+
+    //QR code scanner
+    implementation 'com.google.android.gms:play-services-vision:20.1.3'
+
+    //Fota Support
+    implementation project(path: ':BlueSTSDK_GUI_Android')
+    implementation project(path: ':BlueSTSDK')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // Import the BoM for the Firebase platform
+//    implementation platform('com.google.firebase:firebase-bom:31.0.2')
+
+    // Add the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+//    implementation 'com.google.firebase:firebase-crashlytics'
+//    implementation 'com.google.firebase:firebase-analytics'
+//
+//    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+}
