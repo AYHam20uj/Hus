@@ -70,6 +70,7 @@ import com.msi.moble.mobleAddress;
 import com.msi.moble.mobleNetwork;
 import com.st.bluenrgmesh.MainActivity;
 import com.st.bluenrgmesh.R;
+import com.st.bluenrgmesh.Shared;
 import com.st.bluenrgmesh.UserApplication;
 import com.st.bluenrgmesh.Utils;
 import com.st.bluenrgmesh.colorpicker.CustomDialog;
@@ -414,6 +415,8 @@ public class GroupRecyclerAdapter extends RecyclerView.Adapter<GroupRecyclerAdap
 
 
     private void groupToggle(View v, MotionEvent event, String address, boolean isOnCommand, int position) {
+Log.i("yes","Group toggled");
+        Shared.start = System.currentTimeMillis();
 
         try {
             String x = address;

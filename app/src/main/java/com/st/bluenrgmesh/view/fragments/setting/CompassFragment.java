@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.msi.moble.mobleAddress;
 import com.st.bluenrgmesh.MainActivity;
 import com.st.bluenrgmesh.R;
+import com.st.bluenrgmesh.Shared;
 import com.st.bluenrgmesh.UserApplication;
 import com.st.bluenrgmesh.Utils;
 import com.st.bluenrgmesh.datamap.Nucleo;

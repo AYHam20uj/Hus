@@ -606,6 +606,8 @@ public class ProvisionedTabFragment extends BaseFragment /*implements SensorEven
     }
 
     private void sendOccupancy(int i) {
+        Log.e("started","sendOccupancy");
+
         mLightLCModeModelClient = ((MainActivity) getActivity()).app.mConfiguration.getNetwork().getLightnessLCModel();
         ApplicationParameters.TID tid = new ApplicationParameters.TID(1);
 
@@ -626,6 +628,8 @@ public class ProvisionedTabFragment extends BaseFragment /*implements SensorEven
     };
 
     private void sendLCONCommand() {
+        Log.e("started","sendLCONCommand");
+
         mLightLCModeModelClient = ((MainActivity) getActivity()).app.mConfiguration.getNetwork().getLightnessLCModel();
 
 
@@ -638,6 +642,8 @@ public class ProvisionedTabFragment extends BaseFragment /*implements SensorEven
     }
 
     private void sendLCOFFCommand() {
+        Log.i("started","sendLCOFFCommand");
+
         mLightLCModeModelClient = ((MainActivity) getActivity()).app.mConfiguration.getNetwork().getLightnessLCModel();
         ApplicationParameters.TID tid = new ApplicationParameters.TID(Utils.getTIDValue(getActivity()));
 
@@ -660,6 +666,7 @@ public class ProvisionedTabFragment extends BaseFragment /*implements SensorEven
 
     private void sendLCModeCommand() {
         mLightLCModeModelClient = ((MainActivity) getActivity()).app.mConfiguration.getNetwork().getLightnessLCModel();
+        Log.i("started","sendLCModeCommand");
 
 
         ApplicationParameters.Address address = new ApplicationParameters.Address(2);
@@ -679,6 +686,7 @@ public class ProvisionedTabFragment extends BaseFragment /*implements SensorEven
 
 
     private void sendLCProperty() {
+        Log.i("started","sendLCProperty");
         mLightLCModeModelClient = ((MainActivity) getActivity()).app.mConfiguration.getNetwork().getLightnessLCModel();
         ApplicationParameters.Address address = new ApplicationParameters.Address(2);
 

@@ -281,6 +281,10 @@ public class Utils {
     public static final defaultAppCallback mGroupReadCallback = new defaultAppCallback() {
         @Override
         public void onResponse(mobleAddress peer, Object cookies, byte status, byte[] data) {
+            Shared.finish = System.currentTimeMillis();
+            long start = Shared.start;
+            long result = Shared.finish - start;
+            Log.e("round trip timing:","start: "+ start + " , finish: " + Shared.finish + " , trip time: "+ result);
             Log.i("OnResponseStatus", status + "");
             if (status == STATUS_SUCCESS) {
                 if (listener != null && Utils.isReliableEnabled(contextMainActivity)) {
@@ -2919,6 +2923,7 @@ public class Utils {
                                     }
 
                                     UserApplication app = (UserApplication) context.getApplicationContext();
+                                    Log.i("first","111111");
 
                                     network.getOnOffModel().setGenericOnOff((Utils.isReliableEnabled(context))
                                             , new ApplicationParameters.Address(Integer.parseInt(address)), //=>new ApplicationParameters.Address(mAddress.mValue),
@@ -2962,6 +2967,8 @@ public class Utils {
 
 
                                     UserApplication app = (UserApplication) context.getApplicationContext();
+                                    Log.i("secod","generic");
+
                                     network.getOnOffModel().setGenericOnOff((Utils.isReliableEnabled(context))
                                             , new ApplicationParameters.Address(Integer.parseInt(address)), //=>new ApplicationParameters.Address(mAddress.mValue),
                                             state,

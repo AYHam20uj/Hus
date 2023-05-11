@@ -538,6 +538,7 @@ public class BluetoothMeshTransferService {
          * @param buffer The bytes to write
          */
         public void write(byte[] buffer) {
+            Log.e("BluetoothMeshTransferService","started writing");
             try {
                 mmOutStream.write(buffer);
 

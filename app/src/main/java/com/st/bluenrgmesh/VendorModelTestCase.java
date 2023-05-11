@@ -71,6 +71,7 @@ public class VendorModelTestCase  {
         }
 
         Message msg = new Message();
+
         mHandler.sendMessageDelayed(msg, 100);
     }
 
@@ -86,27 +87,27 @@ public class VendorModelTestCase  {
     private void sendVendorValueByteArrayValue(byte[] bytes) {
         if(_start <= mMessageCount)
         {
-       // ((MainActivity) contextMainActivity).mUserDataRepository.getNewDataFromRemote("Vendor Message count ==> " + _start, LoggerConstants.TYPE_SEND);
-        int rem = _start%2;
+           // ((MainActivity) contextMainActivity).mUserDataRepository.getNewDataFromRemote("Vendor Message count ==> " + _start, LoggerConstants.TYPE_SEND);
+            int rem = _start%2;
 
-        Log.v("MoBLELibrary","Sending Vendor Model Command application side 1 ==> " + _start);
+            Log.v("MoBLELibrary","Sending Vendor Model Command application side 1 ==> " + _start);
 
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    _start += 1;
-                    sendVendorValueByteArrayValue(mMessageByteArray);
-                }},mMessageDelay);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        _start += 1;
+                        sendVendorValueByteArrayValue(mMessageByteArray);
+                    }},mMessageDelay);
 
-        if(rem == 0){
-            bytes[0]=(byte) 2;
-            network.getApplication().setRemoteData(nodeAddress, Nucleo.APPLI_CMD_LED_CONTROL, 1, bytes, false);
-        } else{
-            bytes[0]=(byte) 1;
-            network.getApplication().setRemoteData(nodeAddress, Nucleo.APPLI_CMD_LED_CONTROL, 1, bytes, false);
+            if(rem == 0){
+                bytes[0]=(byte) 2;
+                network.getApplication().setRemoteData(nodeAddress, Nucleo.APPLI_CMD_LED_CONTROL, 1, bytes, false);
+            } else{
+                bytes[0]=(byte) 1;
+                network.getApplication().setRemoteData(nodeAddress, Nucleo.APPLI_CMD_LED_CONTROL, 1, bytes, false);
+            }
+
         }
-
-    }
         else {
             _start =_start -1;
             ((MainActivity) contextMainActivity).mUserDataRepository.getNewDataFromRemote("Vendor Message completed count ==> " + _start, LoggerConstants.TYPE_SEND);
@@ -127,7 +128,9 @@ public class VendorModelTestCase  {
             super.handleMessage(msg);
             final VendorModelTestCase messageSender = mGonoff.get();
             if (messageSender == null) return;
+            //MainActivity.network.advise(Utils.mGroupReadCallback);
             sendVendorValueByteArrayValue(mMessageByteArray);
+
         }
     }
 }

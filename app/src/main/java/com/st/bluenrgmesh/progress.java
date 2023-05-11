@@ -190,6 +190,4 @@ public class progress {
             if (mListener != null) mListener.onHide();
         }
     }
-
-
 }

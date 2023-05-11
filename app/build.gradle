@@ -10,7 +10,7 @@ android {
     ndkVersion '25.1.8937393'
 
     defaultConfig {
-        applicationId ""
+        applicationId "com.st.bluenrgmesh"
         minSdkVersion 23
         targetSdkVersion 32
         versionCode 141

@@ -376,7 +376,6 @@ public class MainActivity extends AppCompatActivity implements RepositoryObserve
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
 
-
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         registerObersever();
         isLaunch = true;
@@ -1840,7 +1839,7 @@ public class MainActivity extends AppCompatActivity implements RepositoryObserve
     public defaultAppCallback modelCallback_cb = new defaultAppCallback() {
         @Override
         public void modelCallback(ApplicationParameters.Address src, ApplicationParameters.Address dst) {
-
+Log.i("callback","mainActivity 1843");
             Utils.DEBUG(" GenericOnOff Async CallBack source : " + src);
             Utils.DEBUG(" GenericOnOff Async CallBack  dst : " + dst);
 

@@ -575,6 +575,7 @@ public class ElementsRecyclerAdapter extends RecyclerView.Adapter<ElementsRecycl
         holder.linear_Toggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.i("yest","element toggle");
                 Vibrator vibe = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
                 vibe.vibrate(150);
                 int addr = Integer.parseInt(node.getElements().get(position).getUnicastAddress().toString(), 16);

@@ -45,6 +45,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
+import android.util.Log;
 
 import com.msi.moble.ApplicationParameters;
 import com.st.bluenrgmesh.MainActivity;
@@ -110,7 +111,7 @@ public class BindAppKeyCallback {
 
         @Override
         protected void onReceiveResult(int resultCode, Bundle resultData) {
-
+            Log.e("BindAppKeCallbak","113");
             if (resultData == null) {
                 return;
             }

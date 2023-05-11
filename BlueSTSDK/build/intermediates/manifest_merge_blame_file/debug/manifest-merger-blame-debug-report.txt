@@ -4,58 +4,58 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="18"
-6-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml
+6-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml
 7        android:targetSdkVersion="32" />
-7-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml
+7-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml
 8
 9    <!-- install only in device with ble -->
 10    <uses-feature
-10-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:4:5-89
+10-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:4:5-89
 11        android:name="android.hardware.bluetooth_le"
-11-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:4:19-63
+11-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:4:19-63
 12        android:required="true" />
-12-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:4:64-87
+12-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:4:64-87
 13
 14    <!-- use the bluetooth -->
 15    <uses-permission android:name="android.permission.BLUETOOTH" />
-15-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:7:5-67
-15-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:7:22-65
+15-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:7:5-67
+15-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:7:22-65
 16    <!-- search for new devices -->
 17    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-17-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:9:5-73
-17-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:9:22-71
+17-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:9:5-73
+17-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:9:22-71
 18    <!-- need for search for new devices for api >23 ! -->
 19    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" />
-19-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:11:5-87
-19-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:11:29-85
+19-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:11:5-87
+19-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:11:29-85
 20
 21    <!-- store log files -->
 22    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-22-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:14:5-81
-22-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:14:22-78
+22-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:14:5-81
+22-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:14:22-78
 23    <!-- read log files -->
 24    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-24-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:16:5-79
-24-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:16:22-77
+24-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:16:5-79
+24-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:16:22-77
 25
 26    <application>
-26-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:18:5-28:19
+26-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:18:5-28:19
 27        <provider
-27-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:19:9-27:20
+27-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:19:9-27:20
 28            android:name="androidx.core.content.FileProvider"
-28-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:20:13-62
+28-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:20:13-62
 29            android:authorities="${applicationId}.logFileProvider"
-29-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:21:13-67
+29-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:21:13-67
 30            android:exported="false"
-30-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:22:13-37
+30-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:22:13-37
 31            android:grantUriPermissions="true" >
-31-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:23:13-47
+31-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:23:13-47
 32            <meta-data
-32-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:24:13-26:57
+32-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:24:13-26:57
 33                android:name="android.support.FILE_PROVIDER_PATHS"
-33-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:25:17-67
+33-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:25:17-67
 34                android:resource="@xml/log_file_path" />
-34-->/Users/ayham/Android/ST-BLE-Mesh_App/BlueSTSDK/src/main/AndroidManifest.xml:26:17-54
+34-->/Users/ayham/test2023/Hus/BlueSTSDK/src/main/AndroidManifest.xml:26:17-54
 35        </provider>
 36    </application>
 37
