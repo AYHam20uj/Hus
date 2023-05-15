@@ -40,6 +40,8 @@
 
 package com.st.bluenrgmesh;
 
+import android.util.Log;
+
 import com.msi.moble.ApplicationParameters;
 import com.msi.moble.Device;
 import com.msi.moble.Provisioner;
@@ -53,10 +55,13 @@ public class defaultAppCallback implements MotorolaApplicationCallback {
 
     @Override
     public void onWriteLocalData(mobleAddress peer,mobleAddress dst, Object cookies, short offset, byte count, byte[] data) {
+        Log.e("MotorolaApplicationCallback","onWriteLocalData");
     }
 
     @Override
     public void onUpdateRemoteData(mobleAddress peer, Object cookies, short offset, byte count, byte[] data) {
+        Log.e("MotorolaApplicationCallback","onUpdateRemoteData");
+
     }
 
     @Override

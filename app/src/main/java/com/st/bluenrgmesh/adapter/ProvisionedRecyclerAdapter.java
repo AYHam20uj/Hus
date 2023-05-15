@@ -455,9 +455,12 @@ public class ProvisionedRecyclerAdapter extends RecyclerView.Adapter<Provisioned
 
                 @Override
                 public void onElementToggle(final String address, final int ele_position, final byte status) {
+                    Log.i("onElementToggle", "ProvisionedRecyclerAdapter");
+
                     ((MainActivity) context).runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+
                             holder.black_viewFL.setVisibility(View.GONE);
                             if (status == 0) { //success
                             } else {

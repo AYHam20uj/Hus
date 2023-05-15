@@ -282,9 +282,17 @@ public class Utils {
         @Override
         public void onResponse(mobleAddress peer, Object cookies, byte status, byte[] data) {
             Shared.finish = System.currentTimeMillis();
-            long start = Shared.start;
-            long result = Shared.finish - start;
-            Log.e("round trip timing:","start: "+ start + " , finish: " + Shared.finish + " , trip time: "+ result);
+            //long start = Shared.start;
+            long start = Shared.starts.get(Utils.array2string(data));
+            //long result = Shared.finish - start;
+            long result = System.currentTimeMillis() - start;
+            Log.e("round trip timing:","start: "+
+                    Shared.starts.get(Utils.array2string(data)) +
+                    " , finish: " + Shared.finish +
+                    " , trip time: "+ result);
+            Shared.numberOfresponses += 1;
+            Log.i("number of responses :", ""+Shared.numberOfresponses);
+            //Log.e("round trip timing:","start: "+ start + " , finish: " + Shared.finish + " , trip time: "+ result);
             Log.i("OnResponseStatus", status + "");
             if (status == STATUS_SUCCESS) {
                 if (listener != null && Utils.isReliableEnabled(contextMainActivity)) {
@@ -333,7 +341,7 @@ public class Utils {
     public static final defaultAppCallback mLibraryVersionCallback = new defaultAppCallback() {
         @Override
         public void onResponse(mobleAddress peer, Object cookies, byte status, byte[] data) {
-            Log.i("OnResponseStatus", status + "");
+            Log.e("OnResponseStatus", status + "");
             if (status == STATUS_SUCCESS) {
                 if (listener != null && Utils.isVendorModelCommand(contextMainActivity)) {
                     if (Utils.isReliableEnabled(contextMainActivity)) {
@@ -2900,6 +2908,13 @@ public class Utils {
                                 }
 
                                 UserApplication.trace("NavBar Device toggle  model vendor model selected");
+                                Shared.start = System.currentTimeMillis();
+                                String value ="";
+
+                                value = Utils.array2string(new byte[]{(byte)1,(byte)0});
+
+                                long finish = System.currentTimeMillis();
+                                Shared.starts.put(value,finish);
                                 network.getApplication().setRemoteData(mobleAddress.deviceAddress(Integer.parseInt(address)),
                                         Nucleo.APPLI_CMD_LED_CONTROL, 1, onCommand ?
                                                 new byte[]{Nucleo.APPLI_CMD_LED_ON} : new byte[]{Nucleo.APPLI_CMD_LED_OFF}, Utils.isReliableEnabled(context));
@@ -2943,9 +2958,38 @@ public class Utils {
                                     network.advise(mGroupReadCallback);
                                 }
 
+                                Log.i("sending","packet");
+                                Shared.start = System.currentTimeMillis();
+
+                                /*String strOn = Nucleo.APPLI_CMD_LED_ON +"sd"+ Nucleo.APPLI_CMD_LED_ON + "bd" + Nucleo.APPLI_CMD_LED_ON +"fn";
+                                String strOff = Nucleo.APPLI_CMD_LED_OFF +"ms"+Nucleo.APPLI_CMD_LED_OFF +"ms"+Nucleo.APPLI_CMD_LED_OFF +"ms";
+
+                                byte[] on = strOn.getBytes();
+                                byte[] off = strOff.getBytes();
+                                network.getApplication().setRemoteData(mobleAddress.deviceAddress(Integer.parseInt(address)),
+                                        Nucleo.APPLI_CMD_LED_CONTROL, 1, onCommand ?
+                                                on: off, Utils.isReliableEnabled(context));*/
+                                Shared.numberOfresponses = 0;
+                                int maxLoops=10;
+                                for(int i =1;i<maxLoops;i+=2){
+                                    String value ="";
+                                    if(i==1){
+                                        value = Utils.array2string(new byte[]{(byte)i,(byte)1});
+                                    }else{
+                                        value = Utils.array2string(new byte[]{(byte)i,(byte)0});
+                                    }
+                                    long finish = System.currentTimeMillis();
+                                    Shared.starts.put(value,finish);
+                                    Log.i("Key",value);
+                                    network.getApplication().setRemoteData(mobleAddress.deviceAddress(Integer.parseInt(address)),
+                                            Nucleo.APPLI_CMD_LED_CONTROL, 1,
+                                                    new byte[]{(byte)i}, Utils.isReliableEnabled(context));
+                                    ((MainActivity) context).mUserDataRepository.getNewDataFromRemote("Vendor OnOff command sent to ==>" + address, LoggerConstants.TYPE_SEND);
+                                }
                                 UserApplication.trace("NavBar Device toggle  model vendor model selected");
+                                /*
                                 network.getApplication().setRemoteData(mobleAddress.deviceAddress(Integer.parseInt(address)), Nucleo.APPLI_CMD_LED_CONTROL, 1, onCommand ? new byte[]{Nucleo.APPLI_CMD_LED_ON} : new byte[]{Nucleo.APPLI_CMD_LED_OFF}, Utils.isReliableEnabled(context));
-                                ((MainActivity) context).mUserDataRepository.getNewDataFromRemote("Vendor OnOff command sent to ==>" + address, LoggerConstants.TYPE_SEND);
+                                ((MainActivity) context).mUserDataRepository.getNewDataFromRemote("Vendor OnOff command sent to ==>" + address, LoggerConstants.TYPE_SEND);*/
                             } else {
                                 try {
                                     UserApplication.trace("NavBar Device toggle generic model selected");

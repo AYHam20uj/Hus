@@ -575,7 +575,8 @@ public class ElementsRecyclerAdapter extends RecyclerView.Adapter<ElementsRecycl
         holder.linear_Toggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("yest","element toggle");
+                // toggling using vendor modle view
+                Log.i("onClick 1","ElementsRecyclerAdapter");
                 Vibrator vibe = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
                 vibe.vibrate(150);
                 int addr = Integer.parseInt(node.getElements().get(position).getUnicastAddress().toString(), 16);
@@ -604,6 +605,8 @@ public class ElementsRecyclerAdapter extends RecyclerView.Adapter<ElementsRecycl
         holder.linear_Version.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.i("onClick 2","ElementsRecyclerAdapter");
+
                 Vibrator vibe = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
                 vibe.vibrate(150);
                 int addr = Integer.parseInt(node.getElements().get(position).getUnicastAddress().toString(), 16);
@@ -620,6 +623,7 @@ public class ElementsRecyclerAdapter extends RecyclerView.Adapter<ElementsRecycl
 
             @Override
             public void onClick(View v) {
+                Log.i("onClick 3","ElementsRecyclerAdapter");
                 Vibrator vibe = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
                 vibe.vibrate(150);
                 final Dialog dialog = new Dialog(context);
@@ -696,6 +700,7 @@ public class ElementsRecyclerAdapter extends RecyclerView.Adapter<ElementsRecycl
         holder.imgBattery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.i("onClick 4","ElementsRecyclerAdapter");
 
             }
         });
@@ -710,6 +715,8 @@ public class ElementsRecyclerAdapter extends RecyclerView.Adapter<ElementsRecycl
         holder.light_lc_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.i("onClick 6","ElementsRecyclerAdapter");
+
                 Utils.moveToFragment((MainActivity) context, new LightLCModelFragment(), elements.get(position), 0);
             }
         });
@@ -718,6 +725,8 @@ public class ElementsRecyclerAdapter extends RecyclerView.Adapter<ElementsRecycl
         holder.lightessLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.i("onClick 7","ElementsRecyclerAdapter");
+
                 showLightingPopup(position, "Lightness");
 
             }
