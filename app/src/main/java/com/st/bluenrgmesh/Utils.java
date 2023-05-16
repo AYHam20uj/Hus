@@ -286,14 +286,14 @@ public class Utils {
             long start = Shared.starts.get(Utils.array2string(data));
             //long result = Shared.finish - start;
             long result = System.currentTimeMillis() - start;
-            Log.e("round trip timing:","start: "+
+            Log.e("Response:"," round trip timing: start: "+
                     Shared.starts.get(Utils.array2string(data)) +
                     " , finish: " + Shared.finish +
                     " , trip time: "+ result);
             Shared.numberOfresponses += 1;
             Log.i("number of responses :", ""+Shared.numberOfresponses);
             //Log.e("round trip timing:","start: "+ start + " , finish: " + Shared.finish + " , trip time: "+ result);
-            Log.i("OnResponseStatus", status + "");
+            //Log.i("OnResponseStatus", status + "");
             if (status == STATUS_SUCCESS) {
                 if (listener != null && Utils.isReliableEnabled(contextMainActivity)) {
                     listener.onElementToggle(String.valueOf(peer.mValue), element_position, status);
@@ -307,7 +307,6 @@ public class Utils {
                 ((MainActivity) contextMainActivity).mUserDataRepository.getNewDataFromRemote("Response: From ==>" + String.valueOf(peer), LoggerConstants.TYPE_RECEIVE);
                 ((MainActivity) contextMainActivity).mUserDataRepository.getNewDataFromRemote("Response: status ==> SUCCESS ", LoggerConstants.TYPE_RECEIVE);
                 ((MainActivity) contextMainActivity).mUserDataRepository.getNewDataFromRemote("Response: data ==>" + Utils.array2string(data), LoggerConstants.TYPE_RECEIVE);
-
 
             } else if (status == STATUS_FAIL_TIMEOUT) {
                 ((MainActivity) contextMainActivity).mUserDataRepository.getNewDataFromRemote("Response: status ==> Timeout ", LoggerConstants.TYPE_RECEIVE);
@@ -2913,8 +2912,8 @@ public class Utils {
 
                                 value = Utils.array2string(new byte[]{(byte)1,(byte)0});
 
-                                long finish = System.currentTimeMillis();
-                                Shared.starts.put(value,finish);
+                                long start = System.currentTimeMillis();
+                                Shared.starts.put(value,start);
                                 network.getApplication().setRemoteData(mobleAddress.deviceAddress(Integer.parseInt(address)),
                                         Nucleo.APPLI_CMD_LED_CONTROL, 1, onCommand ?
                                                 new byte[]{Nucleo.APPLI_CMD_LED_ON} : new byte[]{Nucleo.APPLI_CMD_LED_OFF}, Utils.isReliableEnabled(context));
@@ -2978,8 +2977,8 @@ public class Utils {
                                     }else{
                                         value = Utils.array2string(new byte[]{(byte)i,(byte)0});
                                     }
-                                    long finish = System.currentTimeMillis();
-                                    Shared.starts.put(value,finish);
+                                    long start = System.currentTimeMillis();
+                                    Shared.starts.put(value,start);
                                     Log.i("Key",value);
                                     network.getApplication().setRemoteData(mobleAddress.deviceAddress(Integer.parseInt(address)),
                                             Nucleo.APPLI_CMD_LED_CONTROL, 1,

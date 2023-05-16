@@ -416,7 +416,10 @@ public class GroupRecyclerAdapter extends RecyclerView.Adapter<GroupRecyclerAdap
 
     private void groupToggle(View v, MotionEvent event, String address, boolean isOnCommand, int position) {
 Log.i("yes","Group toggled");
-        Shared.start = System.currentTimeMillis();
+        long start = System.currentTimeMillis();
+        Shared.start = start;
+        Shared.starts.put("0101",start);
+        Shared.starts.put("0200",start);
 
         try {
             String x = address;
